@@ -5,6 +5,9 @@
  */
 package ventana;
 
+import java.awt.TextField;
+import javax.swing.JOptionPane;
+import java.net.InetAddress;
 /**
  *
  * @author kejor
@@ -103,10 +106,25 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void NombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioActionPerformed
-        // TODO add your handling code here:
+        //String Usuario;
+        //Usuario = .parseString(NombreUsuario.getText());
     }//GEN-LAST:event_NombreUsuarioActionPerformed
 
     private void SolisitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SolisitudActionPerformed
+        String Usuario;
+        Usuario = this.NombreUsuario.getText();
+        System.out.println(Usuario);
+        //InetAddress adress = InetAddress.getLocalHost();
+        //System.out.println("IP local: "+adress.getHostAddress());
+        try 
+        {
+            String thisIp = InetAddress.getLocalHost().getHostAddress();
+            System.out.println("IP:"+thisIp);
+        }
+            catch(Exception e) 
+        {
+            e.printStackTrace();
+        }
         juedo obj=new juedo();//aqui se ancla la ventana principal con
         obj.setVisible(true);//el juego
         dispose();
